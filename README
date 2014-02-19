@@ -1,0 +1,4 @@
+Easy X-Path
+-----------------------------------------------------------------
+An easy to use x-path library that allows for ignoring namespaces 
+as well as ignoring the casing of element names.
