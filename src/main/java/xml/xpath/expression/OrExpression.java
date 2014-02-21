@@ -8,7 +8,7 @@ import xml.xpath.Expression;
  * its operands is true. Otherwise the or expression evaluates to false.
  */
 public class OrExpression implements Expression {
-    private static final String OR_EXPRESSION_PATTERN = ".+( or .+)*";
+    private static final String OR_EXPRESSION_PATTERN = ".+ or .+";
     
     public OrExpression() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_OR);

@@ -11,7 +11,7 @@ public class OrExpressionTest {
     }
 
     @Test
-    public void or_expression_without_or_is_recognized() {
-        assertTrue(OrExpression.isOrExpression("."));
+    public void or_expression_without_or_is_not_recognized() {
+        assertFalse(OrExpression.isOrExpression("."));
     }
 }

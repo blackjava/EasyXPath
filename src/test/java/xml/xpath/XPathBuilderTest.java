@@ -95,6 +95,9 @@ public class XPathBuilderTest {
         
         assertNotNull(exception);
         assertNotNull(exception.getErrorCode());
-        assertEquals(ErrorCode.UNSUPPORTED_EXPRESSION_OR, exception.getErrorCode());
+        assertEquals(ErrorCode.UNSUPPORTED_EXPRESSION_UNKNOWN, exception.getErrorCode());
+        assertNotNull(exception.getDetails());
+        assertEquals(1, exception.getDetails().length);
+        assertEquals("unknown expression", exception.getDetails()[0]);
     }
 }
