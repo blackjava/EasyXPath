@@ -21,7 +21,7 @@ import xml.xpath.Expression;
  */
 public class PathExpression implements Expression {
     private static final String NODE_NAME_PATTERN = "[A-Z|a-z]([A-Z|a-z|0-9]|'.'|'_'|'-')*";
-    private static final String PATH_EXPRESSION_PATTERN = "\\/?\\/?" + NODE_NAME_PATTERN + "(\\/" + NODE_NAME_PATTERN + ")*";
+    protected static final String PATH_EXPRESSION_PATTERN = "\\/?\\/?" + NODE_NAME_PATTERN + "(\\/" + NODE_NAME_PATTERN + ")*";
 
     /**
      * Determines if the specified string is a path expression.
