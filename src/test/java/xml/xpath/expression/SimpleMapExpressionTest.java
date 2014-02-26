@@ -7,7 +7,7 @@ public class SimpleMapExpressionTest {
 
     @Test
     public void plain_simple_map_expression_is_recognized() {
-        assertTrue(SimpleMapExpression.isSimpleMapExpression("node ! node"));
+        assertTrue(SimpleMapExpression.isSimpleMapExpression("//node ! node"));
     }
     
     @Test

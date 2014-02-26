@@ -1,6 +1,7 @@
 package xml.xpath.expression;
 
 
+import i18n.ErrorCode;
 import xml.xpath.Expression;
 import static xml.xpath.expression.PathExpression.PATH_EXPRESSION_PATTERN;
 
@@ -23,7 +24,11 @@ import static xml.xpath.expression.PathExpression.PATH_EXPRESSION_PATTERN;
  * otherwise the order of the returned sequence is implementation-dependent.
  */
 public class SimpleMapExpression implements Expression {
-    private static final String SIMPLE_MAP_EXPRESSION_PATTERN = PATH_EXPRESSION_PATTERN + "( ! " + PATH_EXPRESSION_PATTERN + ")*";
+    protected static final String SIMPLE_MAP_EXPRESSION_PATTERN = PATH_EXPRESSION_PATTERN + "( ! " + PATH_EXPRESSION_PATTERN + ")+";
+    
+    public SimpleMapExpression() {
+        throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_SIMPLEMAP);
+    }
     
     public static boolean isSimpleMapExpression(String expression) {
         return expression.matches(SIMPLE_MAP_EXPRESSION_PATTERN);

@@ -1,5 +1,6 @@
 package xml.xpath.expression;
 
+import i18n.ErrorCode;
 import xml.xpath.Expression;
 
 /**
@@ -23,6 +24,10 @@ public class PathExpression implements Expression {
     private static final String NODE_NAME_PATTERN = "[A-Z|a-z]([A-Z|a-z|0-9]|'.'|'_'|'-')*";
     protected static final String PATH_EXPRESSION_PATTERN = "\\/?\\/?" + NODE_NAME_PATTERN + "(\\/" + NODE_NAME_PATTERN + ")*";
 
+    public PathExpression() {
+        throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_PATH);
+    }
+    
     /**
      * Determines if the specified string is a path expression.
      */
