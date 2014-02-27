@@ -1,5 +1,7 @@
 package xml.xpath.expression;
 
+import static xml.xpath.expression.RelativePathExpression.RELATIVEPATH_EXPRESSION_PATTERN;
+
 import i18n.ErrorCode;
 import xml.xpath.Expression;
 
@@ -21,8 +23,7 @@ import xml.xpath.Expression;
  * all nodes descended from this root.
  */
 public class PathExpression implements Expression {
-    private static final String NODE_NAME_PATTERN = "[A-Z|a-z]([A-Z|a-z|0-9]|'.'|'_'|'-')*";
-    protected static final String PATH_EXPRESSION_PATTERN = "\\/?\\/?" + NODE_NAME_PATTERN + "(\\/" + NODE_NAME_PATTERN + ")*";
+    protected static final String PATH_EXPRESSION_PATTERN = "(\\/|\\/" + RELATIVEPATH_EXPRESSION_PATTERN + "|\\/\\/" + RELATIVEPATH_EXPRESSION_PATTERN + "|" + RELATIVEPATH_EXPRESSION_PATTERN + ")";
 
     public PathExpression() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_PATH);
