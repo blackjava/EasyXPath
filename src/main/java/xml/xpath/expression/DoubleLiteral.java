@@ -7,7 +7,7 @@ public class DoubleLiteral implements Expression {
     protected static final String DOUBLE_LITERAL_PATTERN = "(\\.[0-9]+|[0-9]+(\\.[0-9]*)?)[e|E][+|-]?[0-9]+";
     
     public DoubleLiteral() {
-        throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_DOUBLE);
+        throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_LITERAL_DOUBLE);
     }
     
     public static boolean isDoubleLiteral(String expression) {

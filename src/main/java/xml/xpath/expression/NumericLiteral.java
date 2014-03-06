@@ -11,7 +11,7 @@ public class NumericLiteral implements Expression {
     private static final String NUMERIC_LITERAL_PATTERN = "(" + INTEGER_LITERAL_PATTERN + "|" + DECIMAL_LITERAL_PATTERN + "|" + DOUBLE_LITERAL_PATTERN + ")";
     
     public NumericLiteral() {
-        throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_NUMERIC);
+        throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_LITERAL_NUMERIC);
     }
     
     public static boolean isNumericLiteral(String expression) {
