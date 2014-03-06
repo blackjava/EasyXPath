@@ -24,4 +24,9 @@ public class IntegerLiteralTest {
     public void number_containing_operator_is_not_recognized() {
         assertFalse(IntegerLiteral.isIntegerLiteral("123+4"));
     }
+    
+    @Test
+    public void number_surrounded_by_whitespace_is_recognized() {
+        assertTrue(IntegerLiteral.isIntegerLiteral(" 123\t\r\n"));
+    }
 }

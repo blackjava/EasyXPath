@@ -11,6 +11,6 @@ public class DecimalLiteral implements Expression {
     }
     
     public static boolean isDecimalLiteral(String expression) {
-        return expression.matches(DECIMAL_LITERAL_PATTERN);
+        return expression.trim().matches(DECIMAL_LITERAL_PATTERN);
     }
 }

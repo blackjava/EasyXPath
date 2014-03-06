@@ -11,6 +11,6 @@ public class IntegerLiteral implements Expression {
     }
     
     public static boolean isIntegerLiteral(String expression) {
-        return expression.matches(INTEGER_LITERAL_PATTERN);
+        return expression.trim().matches(INTEGER_LITERAL_PATTERN);
     }
 }

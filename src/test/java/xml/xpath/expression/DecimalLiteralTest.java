@@ -39,4 +39,9 @@ public class DecimalLiteralTest {
     public void number_with_operator_is_not_recognized() {
         assertFalse(DecimalLiteral.isDecimalLiteral("123+4"));
     }
+
+    @Test
+    public void decimal_surrounded_by_whitespace_is_recognized() {
+        assertTrue(DecimalLiteral.isDecimalLiteral(" 123.4\t\r\n"));
+    }
 }

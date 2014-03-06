@@ -21,12 +21,12 @@ public class ValueExpressionTest {
     
     @Test
     public void value_expression_with_twooperands_is_not_recognized() {
-        assertFalse(SimpleMapExpression.isSimpleMapExpression("node node"));
+        assertFalse(ValueExpression.isValueExpression("node node"));
     }
 
     @Test
     public void mapped_value_expression_with_only_one_operand_is_not_recognized() {
-        assertFalse(SimpleMapExpression.isSimpleMapExpression("node ! "));
-        assertFalse(SimpleMapExpression.isSimpleMapExpression(" ! node"));
+        assertFalse(ValueExpression.isValueExpression("node ! "));
+        assertFalse(ValueExpression.isValueExpression(" ! node"));
     }
 }

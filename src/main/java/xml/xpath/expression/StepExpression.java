@@ -1,5 +1,7 @@
 package xml.xpath.expression;
 
+import static xml.xpath.expression.PostfixExpression.POSTFIX_EXPRESSION_PATTERN;
+
 import i18n.ErrorCode;
 import xml.xpath.Expression;
 
@@ -10,8 +12,7 @@ import xml.xpath.Expression;
  * right.
  */
 public class StepExpression implements Expression {
-    private static final String NODE_NAME_PATTERN = "[A-Z|a-z]([A-Z|a-z|0-9]|'.'|'_'|'-')*";
-    protected static final String STEP_EXPRESSION_PATTERN = NODE_NAME_PATTERN;
+    protected static final String STEP_EXPRESSION_PATTERN = POSTFIX_EXPRESSION_PATTERN;
     
     public StepExpression() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_STEP);

@@ -24,7 +24,7 @@ import static xml.xpath.expression.PathExpression.PATH_EXPRESSION_PATTERN;
  * otherwise the order of the returned sequence is implementation-dependent.
  */
 public class SimpleMapExpression implements Expression {
-    protected static final String SIMPLE_MAP_EXPRESSION_PATTERN = PATH_EXPRESSION_PATTERN + "( ! " + PATH_EXPRESSION_PATTERN + ")+";
+    protected static final String SIMPLE_MAP_EXPRESSION_PATTERN = PATH_EXPRESSION_PATTERN + "( ! " + PATH_EXPRESSION_PATTERN + ")*";
     
     public SimpleMapExpression() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_SIMPLEMAP);

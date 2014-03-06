@@ -45,4 +45,9 @@ public class DoubleLiteralTest {
     public void double_with_extra_operator_is_not_recognized() {
         assertFalse(DoubleLiteral.isDoubleLiteral("1e+2-"));
     }
+
+    @Test
+    public void double_surrounded_by_whitespace_is_recognized() {
+        assertTrue(DoubleLiteral.isDoubleLiteral(" 1.2e+3\t\r\n"));
+    }
 }

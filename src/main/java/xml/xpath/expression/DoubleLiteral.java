@@ -11,6 +11,6 @@ public class DoubleLiteral implements Expression {
     }
     
     public static boolean isDoubleLiteral(String expression) {
-        return expression.matches(DOUBLE_LITERAL_PATTERN);
+        return expression.trim().matches(DOUBLE_LITERAL_PATTERN);
     }
 }
