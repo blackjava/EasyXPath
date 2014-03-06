@@ -4,7 +4,7 @@ import i18n.ErrorCode;
 import xml.xpath.Expression;
 
 public class StringLiteral implements Expression {
-    private static final String STRING_LITERAL_PATTERN = "(\\\"([^\\\"]|\\\\\\\"|\\\"\\\")*\\\"|\\'([^\\']|\\\\\\'|\\'\\')*\\')";
+    protected static final String STRING_LITERAL_PATTERN = "(\\\"([^\\\"]|\\\\\\\"|\\\"\\\")*\\\"|\\'([^\\']|\\\\\\'|\\'\\')*\\')";
     
     public StringLiteral() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_LITERAL_STRING);
