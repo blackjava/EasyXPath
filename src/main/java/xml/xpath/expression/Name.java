@@ -19,7 +19,7 @@ import xml.xpath.Expression;
 public class Name implements Expression {
     private static final String NAME_START_CHARACTER = "(\\:|[A-Z]|\\_|[a-z]|[\\x{C0}-\\x{D6}]|[\\x{D8}-\\x{F6}]|[\\x{F8}-\\x{2FF}]|[\\x{370}-\\x{37D}]|[\\x{37F}-\\x{1FFF}]|[\\x{200C}-\\x{200D}]|[\\x{2070}-\\x{218F}]|[\\x{2C00}-\\x{2FEF}]|[\\x{3001}-\\x{D7FF}]|[\\x{F900}-\\x{FDCF}]|[\\x{FDF0}-\\x{FFFD}]|[\\x{10000}-\\x{EFFFF}])";
     private static final String NAME_CHARACTER = "(" + Name.NAME_START_CHARACTER + "|\\-|\\.|[0-9]|\\x{B7}|[\\x{0300}-\\x{036F}|[\\x{203F}-\\x{2040}]])";
-    private static final String NAME_PATTERN = Name.NAME_START_CHARACTER + NAME_CHARACTER + "*";
+    protected static final String NAME_PATTERN = Name.NAME_START_CHARACTER + NAME_CHARACTER + "*";
     
     public Name() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_LITERAL_NAME);
