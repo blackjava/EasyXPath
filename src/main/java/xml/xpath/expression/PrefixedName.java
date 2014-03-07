@@ -11,7 +11,7 @@ import xml.xpath.Expression;
  * namespace declaration.
  */
 public class PrefixedName implements Expression {
-    private static final String PREFIXED_NAME_PATTERN = NCNAME_PATTERN + "\\:" + NCNAME_PATTERN;
+    protected static final String PREFIXED_NAME_PATTERN = NCNAME_PATTERN + "\\:" + NCNAME_PATTERN;
     
     public PrefixedName() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_LITERAL_PREFIXEDNAME);
