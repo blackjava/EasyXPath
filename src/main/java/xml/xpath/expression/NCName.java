@@ -10,7 +10,7 @@ import xml.xpath.Expression;
  * qualified by a namespace.
  */
 public class NCName implements Expression {
-    private static final String NCNAME_PATTERN = "(?=" + NAME_PATTERN + ")[^:]*";
+    protected static final String NCNAME_PATTERN = "(?=" + NAME_PATTERN + ")[^:]+";
     
     public NCName() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_LITERAL_NCNAME);
