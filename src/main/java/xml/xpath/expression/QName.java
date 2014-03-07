@@ -4,13 +4,12 @@ import static xml.xpath.expression.NCName.NCNAME_PATTERN;
 import static xml.xpath.expression.PrefixedName.PREFIXED_NAME_PATTERN;
 
 import i18n.ErrorCode;
-import xml.xpath.Expression;
 
 /**
  * QName is a qualified name. A qualified name is an XML name optionally 
  * prefixed with a namespace.
  */
-public class QName implements Expression {
+public class QName extends Literal {
     private static final String QNAME_PATTERN = PREFIXED_NAME_PATTERN + "|" + NCNAME_PATTERN;
     
     public QName() {

@@ -1,13 +1,12 @@
 package xml.xpath.expression;
 
 import i18n.ErrorCode;
-import xml.xpath.Expression;
 
 /**
  * A decimal literal is a direct syntactic representation of a number with  
  * fractal parts.
  */
-public class DecimalLiteral implements Expression {
+public class DecimalLiteral extends Literal {
     protected static final String DECIMAL_LITERAL_PATTERN = "(\\.[0-9]+|[0-9]+\\.[0-9]*)";
     
     public DecimalLiteral() {

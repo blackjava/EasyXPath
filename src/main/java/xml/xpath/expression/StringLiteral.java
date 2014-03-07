@@ -1,7 +1,6 @@
 package xml.xpath.expression;
 
 import i18n.ErrorCode;
-import xml.xpath.Expression;
 
 /**
  * A string literal is a direct syntactic representation of an atomic string.
@@ -15,7 +14,7 @@ import xml.xpath.Expression;
  * is delimited by quotation marks, two adjacent quotation marks within the 
  * literal are interpreted as one quotation mark.
  */
-public class StringLiteral implements Expression {
+public class StringLiteral extends Literal {
     protected static final String STRING_LITERAL_PATTERN = "(\\\"([^\\\"]|\\\\\\\"|\\\"\\\")*\\\"|\\'([^\\']|\\\\\\'|\\'\\')*\\')";
     
     public StringLiteral() {
