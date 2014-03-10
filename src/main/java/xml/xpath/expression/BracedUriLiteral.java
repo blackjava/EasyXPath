@@ -8,7 +8,7 @@ import i18n.ErrorCode;
  * document.
  */
 public class BracedUriLiteral extends Literal {
-    private static final String BRACEDURI_LITERAL_PATTERN = "Q\\{[^\\{\\}]*\\}";
+    protected static final String BRACEDURI_LITERAL_PATTERN = "Q\\{[^\\{\\}]*\\}";
     
     public BracedUriLiteral() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_LITERAL_BRACEDURI);
