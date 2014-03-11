@@ -13,7 +13,7 @@ import xml.xpath.Expression;
  * of expression that can bind variables.
  */
 public class VarRef implements Expression {
-    private static final String VARREF_PATTERN = "\\$" + EQNAME_PATTERN;
+    protected static final String VARREF_PATTERN = "\\$" + EQNAME_PATTERN;
     
     public VarRef() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_VARREF);

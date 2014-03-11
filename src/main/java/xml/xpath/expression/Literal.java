@@ -13,7 +13,7 @@ import xml.xpath.Expression;
  * literals.
  */
 public class Literal implements Expression {
-    private static final String LITERAL_PATTERN = "(" + NUMERIC_LITERAL_PATTERN + "|" + STRING_LITERAL_PATTERN + ")";
+    protected static final String LITERAL_PATTERN = "(" + NUMERIC_LITERAL_PATTERN + "|" + STRING_LITERAL_PATTERN + ")";
     
     public Literal() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_LITERAL);
