@@ -13,7 +13,7 @@ import i18n.ErrorCode;
  * if their namespace prefixes are not equal.
  */
 public class EQName extends Literal {
-    private static String EQNAME_PATTERN = "(" + QNAME_PATTERN + "|" + URIQUALIFIEDNAME_PATTERN + ")";
+    protected static final String EQNAME_PATTERN = "(" + QNAME_PATTERN + "|" + URIQUALIFIEDNAME_PATTERN + ")";
     
     public EQName() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_LITERAL_EQNAME);
