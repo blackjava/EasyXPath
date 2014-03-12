@@ -28,4 +28,9 @@ public class EQNameTest {
     public void name_with_braced_uri_identifier_and_namespace_is_not_recognized() {
         assertFalse(EQName.isEqName("Q{http://test.com}namespace:name"));
     }
+
+    @Test
+    public void two_names_without_prefix_is_not_recognized() {
+        assertFalse(EQName.isEqName("name name"));
+    }
 }

@@ -23,4 +23,9 @@ public class QNameTest {
     public void namespace_with_empty_name_is_not_recognized() {
         assertFalse(QName.isQName("namespace:"));
     }
+
+    @Test
+    public void namespace_and_name_with_whitespace_separator_is_not_recognized() {
+        assertFalse(QName.isQName("namespace name"));
+    }
 }

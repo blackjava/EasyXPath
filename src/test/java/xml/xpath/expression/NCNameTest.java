@@ -18,4 +18,9 @@ public class NCNameTest {
     public void name_containing_colon_is_not_recognized() {
         assertFalse(NCName.isNCName("namespace:name"));
     }
+
+    @Test
+    public void name_containing_space_is_not_recognized() {
+        assertFalse(NCName.isNCName("namespace name"));
+    }
 }

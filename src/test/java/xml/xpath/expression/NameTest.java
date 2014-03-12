@@ -30,4 +30,8 @@ public class NameTest {
         assertFalse(Name.isName("123name"));
     }
     
+    @Test
+    public void name_with_whitespace_is_not_recognized() {
+        assertFalse(Name.isName("namespace name"));
+    }
 }

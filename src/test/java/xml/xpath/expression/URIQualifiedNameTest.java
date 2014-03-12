@@ -10,6 +10,11 @@ public class URIQualifiedNameTest {
     }
     
     @Test
+    public void name_without_uri_is_not_recognized() {
+        assertFalse(URIQualifiedName.isUriQualifiedName("name"));
+    }
+    
+    @Test
     public void braced_uri_without_element_name_is_not_recognized() {
         assertFalse(URIQualifiedName.isUriQualifiedName("Q{http://test.com}"));
     }
