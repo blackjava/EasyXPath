@@ -23,4 +23,9 @@ public class NCNameTest {
     public void name_containing_space_is_not_recognized() {
         assertFalse(NCName.isNCName("namespace name"));
     }
+
+    @Test
+    public void name_containing_comma_is_not_recognized() {
+        assertFalse(NCName.isNCName("namespace,name"));
+    }
 }

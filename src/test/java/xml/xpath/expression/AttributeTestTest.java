@@ -25,7 +25,12 @@ public class AttributeTestTest {
     }
 
     @Test
+    public void attribute_test_with_wildcard_and_type_is_recognized() {
+        assertTrue(AttributeTest.isAttributeTest("attribute(*,xs:string)"));
+    }
+    
+    @Test
     public void attribute_test_with_incorrect_number_of_arguments_is_not_recognized() {
-        assertFalse(AttributeTest.isAttributeTest("attribute(namespace, name, xs:string)"));
+        assertFalse(AttributeTest.isAttributeTest("attribute(namespace,name,xs:string)"));
     }
 }
