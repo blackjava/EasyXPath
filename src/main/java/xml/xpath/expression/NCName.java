@@ -1,7 +1,5 @@
 package xml.xpath.expression;
 
-import static xml.xpath.expression.Name.NAME_PATTERN;
-
 import i18n.ErrorCode;
 
 /**
