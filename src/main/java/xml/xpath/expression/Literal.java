@@ -15,10 +15,6 @@ import xml.xpath.Expression;
 public class Literal implements Expression {
     protected static final String LITERAL_PATTERN = "(" + NUMERIC_LITERAL_PATTERN + "|" + STRING_LITERAL_PATTERN + ")";
     
-    public Literal() {
-        throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_LITERAL);
-    }
-    
     public static boolean isLiteral(String expression) {
         return expression.trim().matches(LITERAL_PATTERN);
     }
