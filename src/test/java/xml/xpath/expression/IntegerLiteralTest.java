@@ -18,7 +18,6 @@ public class IntegerLiteralTest {
             assertEquals("", parameters[0]);
         }
     }
-
     
     @Test
     public void integer_is_properly_instantiated() {
