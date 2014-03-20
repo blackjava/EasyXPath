@@ -1,13 +1,14 @@
-package xml.xpath.expression;
+package xml.xpath.nodetest;
 
 import i18n.ErrorCode;
-import xml.xpath.Expression;
+import xml.xpath.NodeTest;
+import xml.xpath.UnsupportedExpressionException;
 
 /**
  * A NamespaceNodeTest matches any namespace element. If a NamespaceNodeTest is
  * the node test of an axis step, a static error is raised [err:XQST0134].
  */
-public class NamespaceNodeTest implements Expression {
+public class NamespaceNodeTest implements NodeTest {
     private static final String NAMESPACENODETEST_PATTERN = "namespace\\-node\\(\\)";
     
     public NamespaceNodeTest() {

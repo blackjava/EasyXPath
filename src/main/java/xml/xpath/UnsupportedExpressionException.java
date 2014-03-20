@@ -1,4 +1,4 @@
-package xml.xpath.expression;
+package xml.xpath;
 
 import i18n.ErrorCode;
 

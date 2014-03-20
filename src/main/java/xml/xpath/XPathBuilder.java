@@ -6,7 +6,6 @@ import xml.xpath.expression.IfExpression;
 import xml.xpath.expression.LetExpression;
 import xml.xpath.expression.OrExpression;
 import xml.xpath.expression.QuantifiedExpression;
-import xml.xpath.expression.UnsupportedExpressionException;
 
 /**
  * The XPathBuilder compiles an x-path notation and returns an executable

@@ -1,9 +1,10 @@
-package xml.xpath.expression;
+package xml.xpath.nodetest;
 
 import static xml.xpath.expression.EQName.EQNAME_PATTERN;
 
 import i18n.ErrorCode;
-import xml.xpath.Expression;
+import xml.xpath.NodeTest;
+import xml.xpath.UnsupportedExpressionException;
 
 /**
  * An AttributeTest is used to match an attribute node by its name and/or type 
@@ -37,7 +38,7 @@ import xml.xpath.Expression;
  * Example: attribute(*, currency) matches any attribute node whose type 
  * annotation is currency (or is derived from currency), regardless of its name.
  */
-public class AttributeTest implements Expression {
+public class AttributeTest implements NodeTest {
     private static final String ATTRIBUTETEST_PATTERN = "attribute\\(((" + EQNAME_PATTERN + "|\\*)(," + EQNAME_PATTERN + ")?)?\\)";
     
     public AttributeTest() {

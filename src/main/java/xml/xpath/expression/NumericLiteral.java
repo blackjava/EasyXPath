@@ -1,5 +1,6 @@
 package xml.xpath.expression;
 
+import xml.xpath.UnsupportedExpressionException;
 import static xml.xpath.expression.DecimalLiteral.DECIMAL_LITERAL_PATTERN;
 import static xml.xpath.expression.DoubleLiteral.DOUBLE_LITERAL_PATTERN;
 import static xml.xpath.expression.IntegerLiteral.INTEGER_LITERAL_PATTERN;

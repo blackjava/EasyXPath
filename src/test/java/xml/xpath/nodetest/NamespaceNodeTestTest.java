@@ -1,5 +1,6 @@
-package xml.xpath.expression;
+package xml.xpath.nodetest;
 
+import xml.xpath.nodetest.NamespaceNodeTest;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

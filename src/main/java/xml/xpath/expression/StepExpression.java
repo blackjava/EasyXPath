@@ -1,5 +1,6 @@
 package xml.xpath.expression;
 
+import xml.xpath.UnsupportedExpressionException;
 import static xml.xpath.expression.PostfixExpression.POSTFIX_EXPRESSION_PATTERN;
 
 import i18n.ErrorCode;

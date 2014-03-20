@@ -1,5 +1,6 @@
 package xml.xpath.expression;
 
+import xml.xpath.UnsupportedExpressionException;
 import static xml.xpath.expression.QName.QNAME_PATTERN;
 import static xml.xpath.expression.URIQualifiedName.URIQUALIFIEDNAME_PATTERN;
 
@@ -13,7 +14,7 @@ import i18n.ErrorCode;
  * if their namespace prefixes are not equal.
  */
 public class EQName extends Literal {
-    protected static final String EQNAME_PATTERN = "(" + QNAME_PATTERN + "|" + URIQUALIFIEDNAME_PATTERN + ")";
+    public static final String EQNAME_PATTERN = "(" + QNAME_PATTERN + "|" + URIQUALIFIEDNAME_PATTERN + ")";
     
     public EQName() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_LITERAL_EQNAME);

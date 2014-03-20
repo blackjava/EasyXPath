@@ -1,6 +1,7 @@
 package xml.xpath.expression;
 
 
+import xml.xpath.UnsupportedExpressionException;
 import i18n.ErrorCode;
 import xml.xpath.Expression;
 import static xml.xpath.expression.PathExpression.PATH_EXPRESSION_PATTERN;

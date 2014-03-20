@@ -3,7 +3,6 @@ package xml.xpath;
 import i18n.ErrorCode;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import xml.xpath.expression.UnsupportedExpressionException;
 
 public class XPathBuilderTest {
     private final XPathBuilder builder = new XPathBuilder();

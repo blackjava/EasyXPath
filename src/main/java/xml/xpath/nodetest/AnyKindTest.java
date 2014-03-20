@@ -1,12 +1,13 @@
-package xml.xpath.expression;
+package xml.xpath.nodetest;
 
 import i18n.ErrorCode;
-import xml.xpath.Expression;
+import xml.xpath.NodeTest;
+import xml.xpath.UnsupportedExpressionException;
 
 /**
  * An AnyKindTest matches a node of any kind.
  */
-public class AnyKindTest implements Expression {
+public class AnyKindTest implements NodeTest {
     private static final String ANYKINDTEST_PATTERN = "node\\(\\)";
     
     public AnyKindTest() {
