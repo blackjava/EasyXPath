@@ -16,7 +16,7 @@ import i18n.ErrorCode;
  * literal are interpreted as one quotation mark.
  */
 public class StringLiteral extends Literal {
-    protected static final String STRING_LITERAL_PATTERN = "(\\\"([^\\\"]|\\\\\\\"|\\\"\\\")*\\\"|\\'([^\\']|\\\\\\'|\\'\\')*\\')";
+    public static final String STRING_LITERAL_PATTERN = "(\\\"([^\\\"]|\\\\\\\"|\\\"\\\")*\\\"|\\'([^\\']|\\\\\\'|\\'\\')*\\')";
     
     public StringLiteral() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_LITERAL_STRING);
