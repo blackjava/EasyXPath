@@ -42,7 +42,7 @@ public class AttributeTest implements NodeTest {
     private static final String ATTRIBUTETEST_PATTERN = "attribute\\(((" + EQNAME_PATTERN + "|\\*)(," + EQNAME_PATTERN + ")?)?\\)";
     
     public AttributeTest() {
-        throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_ATTRIBUTETEST);
+        throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_NODETEST_ATTRIBUTETEST);
     }
     
     public static boolean isAttributeTest(String expression) {

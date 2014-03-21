@@ -11,7 +11,7 @@ public class TextTest implements NodeTest {
     private static final String TEXTTEST_PATTERN = "text\\(\\)";
     
     public TextTest() {
-        throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_TEXTTEST);
+        throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_NODETEST_TEXTTEST);
     }
     
     public static boolean isTextTest(String expression) {

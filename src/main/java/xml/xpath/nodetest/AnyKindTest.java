@@ -11,7 +11,7 @@ public class AnyKindTest implements NodeTest {
     private static final String ANYKINDTEST_PATTERN = "node\\(\\)";
     
     public AnyKindTest() {
-        throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_ANYKINDTEST);
+        throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_NODETEST_ANYKINDTEST);
     }
     
     public static boolean isAnyKindTest(String expression) {

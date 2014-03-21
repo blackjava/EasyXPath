@@ -12,7 +12,7 @@ public class NamespaceNodeTest implements NodeTest {
     private static final String NAMESPACENODETEST_PATTERN = "namespace\\-node\\(\\)";
     
     public NamespaceNodeTest() {
-        throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_NAMESPACENODETEST);
+        throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_NODETEST_NAMESPACENODETEST);
     }
     
     public static boolean isNamespaceNodeTest(String expression) {
