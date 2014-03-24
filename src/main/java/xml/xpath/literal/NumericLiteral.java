@@ -1,9 +1,9 @@
-package xml.xpath.expression;
+package xml.xpath.literal;
 
 import xml.xpath.UnsupportedExpressionException;
-import static xml.xpath.expression.DecimalLiteral.DECIMAL_LITERAL_PATTERN;
-import static xml.xpath.expression.DoubleLiteral.DOUBLE_LITERAL_PATTERN;
-import static xml.xpath.expression.IntegerLiteral.INTEGER_LITERAL_PATTERN;
+import static xml.xpath.literal.DecimalLiteral.DECIMAL_LITERAL_PATTERN;
+import static xml.xpath.literal.DoubleLiteral.DOUBLE_LITERAL_PATTERN;
+import static xml.xpath.literal.IntegerLiteral.INTEGER_LITERAL_PATTERN;
 
 import i18n.ErrorCode;
 

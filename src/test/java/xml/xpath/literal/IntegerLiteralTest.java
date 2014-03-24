@@ -1,7 +1,9 @@
-package xml.xpath.expression;
+package xml.xpath.literal;
 
+import xml.xpath.literal.IntegerLiteral;
 import i18n.ErrorCode;
 import org.junit.Test;
+import xml.xpath.NumberFormatException;
 import static org.junit.Assert.*;
 
 public class IntegerLiteralTest {

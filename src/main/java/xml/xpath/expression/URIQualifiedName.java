@@ -1,7 +1,8 @@
 package xml.xpath.expression;
 
+import xml.xpath.literal.Literal;
 import xml.xpath.UnsupportedExpressionException;
-import static xml.xpath.expression.BracedUriLiteral.BRACEDURI_LITERAL_PATTERN;
+import static xml.xpath.literal.BracedUriLiteral.BRACEDURI_LITERAL_PATTERN;
 import static xml.xpath.expression.NCName.NCNAME_PATTERN;
 
 import i18n.ErrorCode;

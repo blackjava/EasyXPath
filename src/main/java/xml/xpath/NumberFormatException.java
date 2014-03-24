@@ -1,4 +1,4 @@
-package xml.xpath.expression;
+package xml.xpath;
 
 import i18n.ErrorCode;
 
@@ -13,11 +13,11 @@ public class NumberFormatException extends java.lang.NumberFormatException {
         super.addSuppressed(cause);
     }
     
-    protected ErrorCode getErrorCode() {
+    public ErrorCode getErrorCode() {
         return errorCode;
     }
     
-    protected String[] getParameters() {
+    public String[] getParameters() {
         return parameters;
     }
 }

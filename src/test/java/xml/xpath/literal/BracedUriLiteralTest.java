@@ -1,5 +1,6 @@
-package xml.xpath.expression;
+package xml.xpath.literal;
 
+import xml.xpath.literal.BracedUriLiteral;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

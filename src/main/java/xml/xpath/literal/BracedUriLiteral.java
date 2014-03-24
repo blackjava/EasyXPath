@@ -1,4 +1,4 @@
-package xml.xpath.expression;
+package xml.xpath.literal;
 
 import xml.xpath.UnsupportedExpressionException;
 import i18n.ErrorCode;
@@ -9,7 +9,7 @@ import i18n.ErrorCode;
  * document.
  */
 public class BracedUriLiteral extends Literal {
-    protected static final String BRACEDURI_LITERAL_PATTERN = "Q\\{[^\\{\\}]*\\}";
+    public static final String BRACEDURI_LITERAL_PATTERN = "Q\\{[^\\{\\}]*\\}";
     
     public BracedUriLiteral() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_LITERAL_BRACEDURI);

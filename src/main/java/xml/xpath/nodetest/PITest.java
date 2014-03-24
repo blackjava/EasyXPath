@@ -1,7 +1,7 @@
 package xml.xpath.nodetest;
 
 import static xml.xpath.expression.NCName.NCNAME_PATTERN;
-import static xml.xpath.expression.StringLiteral.STRING_LITERAL_PATTERN;
+import static xml.xpath.literal.StringLiteral.STRING_LITERAL_PATTERN;
 
 import i18n.ErrorCode;
 import xml.xpath.NodeTest;

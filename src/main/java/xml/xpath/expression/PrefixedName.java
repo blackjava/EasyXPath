@@ -1,5 +1,6 @@
 package xml.xpath.expression;
 
+import xml.xpath.literal.Literal;
 import xml.xpath.UnsupportedExpressionException;
 import static xml.xpath.expression.NCName.NCNAME_PATTERN;
 

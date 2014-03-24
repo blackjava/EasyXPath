@@ -1,6 +1,7 @@
-package xml.xpath.expression;
+package xml.xpath.literal;
 
 import i18n.ErrorCode;
+import xml.xpath.NumberFormatException;
 
 /**
  * A decimal literal is a direct syntactic representation of a number with  
