@@ -8,7 +8,7 @@ import xml.xpath.UnsupportedExpressionException;
  * A CommentTest matches any comment element.
  */
 public class CommentTest implements NodeTest {
-    private static final String COMMENTTEST_PATTERN = "comment\\(\\)";
+    protected static final String COMMENTTEST_PATTERN = "comment\\(\\)";
     
     public CommentTest() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_NODETEST_COMMENTTEST);

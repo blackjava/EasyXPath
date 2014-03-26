@@ -21,7 +21,7 @@ import xml.xpath.UnsupportedExpressionException;
  * exactly one element node that is matched by the ElementTest element(book). 
  */
 public class DocumentTest implements NodeTest {
-    private static final String DOCUMENTTEST_PATTERN = "document-node\\((" + ELEMENTTEST_PATTERN + "|" + SCHEMAELEMENTTEST_PATTERN + ")?\\)";
+    protected static final String DOCUMENTTEST_PATTERN = "document-node\\((" + ELEMENTTEST_PATTERN + "|" + SCHEMAELEMENTTEST_PATTERN + ")?\\)";
     
     public DocumentTest() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_NODETEST_DOCUMENTTEST);

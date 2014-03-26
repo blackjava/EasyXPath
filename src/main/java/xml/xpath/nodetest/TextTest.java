@@ -8,7 +8,7 @@ import xml.xpath.UnsupportedExpressionException;
  * A TextTest matches any text element.
  */
 public class TextTest implements NodeTest {
-    private static final String TEXTTEST_PATTERN = "text\\(\\)";
+    protected static final String TEXTTEST_PATTERN = "text\\(\\)";
     
     public TextTest() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_NODETEST_TEXTTEST);

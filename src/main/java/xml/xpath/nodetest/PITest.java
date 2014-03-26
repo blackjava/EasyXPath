@@ -27,7 +27,7 @@ import xml.xpath.UnsupportedExpressionException;
  * is raised [err:XPTY0004].
  */
 public class PITest implements NodeTest {
-    private static final String PITEST_PATTERN = "processing-instruction\\((" + NCNAME_PATTERN + "|" + STRING_LITERAL_PATTERN + ")?\\)";
+    protected static final String PITEST_PATTERN = "processing-instruction\\((" + NCNAME_PATTERN + "|" + STRING_LITERAL_PATTERN + ")?\\)";
     
     public PITest() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_NODETEST_PITEST);

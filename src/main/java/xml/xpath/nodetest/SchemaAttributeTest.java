@@ -31,7 +31,7 @@ import xml.xpath.UnsupportedExpressionException;
  * type declared for the color attribute.
  */
 public class SchemaAttributeTest implements NodeTest {
-    private static final String SCHEMAATTRIBUTETEST_PATTERN = "schema-attribute\\(" + EQNAME_PATTERN + "\\)";
+    protected static final String SCHEMAATTRIBUTETEST_PATTERN = "schema-attribute\\(" + EQNAME_PATTERN + "\\)";
     
     public SchemaAttributeTest() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_NODETEST_SCHEMAATTRIBUTETEST);

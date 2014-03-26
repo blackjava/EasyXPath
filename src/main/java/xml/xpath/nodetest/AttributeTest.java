@@ -39,7 +39,7 @@ import xml.xpath.UnsupportedExpressionException;
  * annotation is currency (or is derived from currency), regardless of its name.
  */
 public class AttributeTest implements NodeTest {
-    private static final String ATTRIBUTETEST_PATTERN = "attribute\\(((" + EQNAME_PATTERN + "|\\*)(," + EQNAME_PATTERN + ")?)?\\)";
+    protected static final String ATTRIBUTETEST_PATTERN = "attribute\\(((" + EQNAME_PATTERN + "|\\*)(," + EQNAME_PATTERN + ")?)?\\)";
     
     public AttributeTest() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_NODETEST_ATTRIBUTETEST);

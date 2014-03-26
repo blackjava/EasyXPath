@@ -9,7 +9,7 @@ import xml.xpath.UnsupportedExpressionException;
  * the node test of an axis step, a static error is raised [err:XQST0134].
  */
 public class NamespaceNodeTest implements NodeTest {
-    private static final String NAMESPACENODETEST_PATTERN = "namespace\\-node\\(\\)";
+    protected static final String NAMESPACENODETEST_PATTERN = "namespace\\-node\\(\\)";
     
     public NamespaceNodeTest() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_NODETEST_NAMESPACENODETEST);
