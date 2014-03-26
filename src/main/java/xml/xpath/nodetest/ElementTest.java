@@ -53,7 +53,7 @@ import xml.xpath.UnsupportedExpressionException;
  *   of its name.
  */
 public class ElementTest implements NodeTest {
-    private static final String ELEMENTTEST_PATTERN = "element\\(((" + EQNAME_PATTERN + "|\\*)(\\," + EQNAME_PATTERN + "(\\?)?)?)?\\)";
+    protected static final String ELEMENTTEST_PATTERN = "element\\(((" + EQNAME_PATTERN + "|\\*)(\\," + EQNAME_PATTERN + "(\\?)?)?)?\\)";
     
     public ElementTest() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_NODETEST_ELEMENTTEST);
