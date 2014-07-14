@@ -11,8 +11,8 @@ import xml.xpath.UnsupportedExpressionException;
  * is a node, an axis step returns a sequence of zero or more nodes; otherwise, 
  * a type error is raised [err:XPTY0020]. 
  * 
- * The resulting node sequence is returned in document order. A forward step 
- * always points to a node that is further ahead in the document order, and may 
+ * The resulting node sequence is returned in document order. A reverse step 
+ * always points to a node that is further back in the document order, and may 
  * be followed by zero or more predicates.
  * 
  * In the abbreviated syntax for a step, the axis can be omitted and other 
@@ -26,16 +26,16 @@ import xml.xpath.UnsupportedExpressionException;
  * context node: child is the name of the axis, and para is the name of the 
  * element nodes to be selected on this axis. 
  */
-public class ForwardStep {
-    private static final String FORWARD_AXIS_PATTERN = "(child::|descendant::|attribute::|self::|descendant-or-self::|following-sibling::|following::|namespace::)";
-    private static final String ABBREVIATED_FORWARD_STEP_PATTERN = "@?";
-    private static final String FORWARD_STEP_PATTERN = "(" + FORWARD_AXIS_PATTERN + "|" + ABBREVIATED_FORWARD_STEP_PATTERN + ")" + EQName.EQNAME_PATTERN;
+public class ReverseStep {
+    private static final String REVERSE_AXIS_PATTERN = "(parent::|ancestor::|preceding-sibling::|preceding::|ancestor-or-self::)";
+    private static final String ABBREVIATED_REVERSE_STEP_PATTERN = "\\.\\.";
+    private static final String REVERSE_STEP_PATTERN = "(" + REVERSE_AXIS_PATTERN + EQName.EQNAME_PATTERN + "|" + ABBREVIATED_REVERSE_STEP_PATTERN + ")";
     
-    public ForwardStep() {
-        throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_FORWARDSTEP);
+    public ReverseStep() {
+        throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_REVERSESTEP);
     }
     
-    public static boolean isForwardStep(String expression) {
-        return expression.matches(FORWARD_STEP_PATTERN);
+    public static boolean isReverseStep(String expression) {
+        return expression.matches(REVERSE_STEP_PATTERN);
     }
 }
