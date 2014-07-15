@@ -48,7 +48,7 @@ import xml.xpath.NodeTest;
  *   instructions.
  */
 public class KindTest implements NodeTest {
-    private static final String KINDTEST_PATTERN = "(" + DOCUMENTTEST_PATTERN 
+    public static final String KINDTEST_PATTERN = "(" + DOCUMENTTEST_PATTERN 
             + "|" + ELEMENTTEST_PATTERN + "|" + ATTRIBUTETEST_PATTERN + "|"  
             + SCHEMAELEMENTTEST_PATTERN + "|" + SCHEMAATTRIBUTETEST_PATTERN 
             + "|" + PITEST_PATTERN + "|" + COMMENTTEST_PATTERN + "|" 

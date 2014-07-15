@@ -26,18 +26,18 @@ public class RelativePathExpressionTest {
     }
     
     @Test
-    public void absolute_path_expression_containing_single_node_name_is_recognized() {
-        assertTrue(RelativePathExpression.isRelativePathExpression("/node"));
+    public void absolute_path_expression_containing_single_node_name_is_not_recognized() {
+        assertFalse(RelativePathExpression.isRelativePathExpression("/node"));
     }
 
     @Test
-    public void absolute_path_expression_containing_nested_node_name_is_recognized() {
-        assertTrue(RelativePathExpression.isRelativePathExpression("/node/child"));
+    public void absolute_path_expression_containing_nested_node_name_is_not_recognized() {
+        assertFalse(RelativePathExpression.isRelativePathExpression("/node/child"));
     }
     
     @Test
-    public void search_path_expression_containing_nested_node_name_is_recognized() {
-        assertTrue(RelativePathExpression.isRelativePathExpression("//node/child"));
+    public void search_path_expression_containing_nested_node_name_is_not_recognized() {
+        assertFalse(RelativePathExpression.isRelativePathExpression("//node/child"));
     }
 
     @Test

@@ -13,7 +13,7 @@ import xml.xpath.Expression;
  * right.
  */
 public class StepExpression implements Expression {
-    protected static final String STEP_EXPRESSION_PATTERN = POSTFIX_EXPRESSION_PATTERN;
+    protected static final String STEP_EXPRESSION_PATTERN = "(" + POSTFIX_EXPRESSION_PATTERN + ")";
     
     public StepExpression() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_STEP);
