@@ -29,7 +29,7 @@ import xml.xpath.UnsupportedExpressionException;
 public class ReverseStep {
     private static final String REVERSE_AXIS_PATTERN = "(parent::|ancestor::|preceding-sibling::|preceding::|ancestor-or-self::)";
     private static final String ABBREVIATED_REVERSE_STEP_PATTERN = "\\.\\.";
-    private static final String REVERSE_STEP_PATTERN = "(" + REVERSE_AXIS_PATTERN + EQName.EQNAME_PATTERN + "|" + ABBREVIATED_REVERSE_STEP_PATTERN + ")";
+    protected static final String REVERSE_STEP_PATTERN = "(" + REVERSE_AXIS_PATTERN + EQName.EQNAME_PATTERN + "|" + ABBREVIATED_REVERSE_STEP_PATTERN + ")";
     
     public ReverseStep() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_REVERSESTEP);

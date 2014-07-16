@@ -29,7 +29,7 @@ import xml.xpath.UnsupportedExpressionException;
 public class ForwardStep {
     private static final String FORWARD_AXIS_PATTERN = "(child::|descendant::|attribute::|self::|descendant-or-self::|following-sibling::|following::|namespace::)";
     private static final String ABBREVIATED_FORWARD_STEP_PATTERN = "@?";
-    private static final String FORWARD_STEP_PATTERN = "(" + FORWARD_AXIS_PATTERN + "|" + ABBREVIATED_FORWARD_STEP_PATTERN + ")" + EQName.EQNAME_PATTERN;
+    protected static final String FORWARD_STEP_PATTERN = "(" + FORWARD_AXIS_PATTERN + "|" + ABBREVIATED_FORWARD_STEP_PATTERN + ")" + EQName.EQNAME_PATTERN;
     
     public ForwardStep() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_FORWARDSTEP);
