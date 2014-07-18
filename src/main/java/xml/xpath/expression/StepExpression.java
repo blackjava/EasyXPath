@@ -1,6 +1,7 @@
 package xml.xpath.expression;
 
 import xml.xpath.UnsupportedExpressionException;
+import static xml.xpath.expression.AxisStep.AXIS_STEP_PATTERN;
 import static xml.xpath.expression.PostfixExpression.POSTFIX_EXPRESSION_PATTERN;
 
 import i18n.ErrorCode;
@@ -13,7 +14,7 @@ import xml.xpath.Expression;
  * right.
  */
 public class StepExpression implements Expression {
-    protected static final String STEP_EXPRESSION_PATTERN = "(" + POSTFIX_EXPRESSION_PATTERN + ")";
+    protected static final String STEP_EXPRESSION_PATTERN = "(" + POSTFIX_EXPRESSION_PATTERN + "|" + AXIS_STEP_PATTERN + ")";
     
     public StepExpression() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_STEP);

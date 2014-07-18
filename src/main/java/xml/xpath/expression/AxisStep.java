@@ -30,7 +30,7 @@ import xml.xpath.UnsupportedExpressionException;
  * element nodes to be selected on this axis. 
  */
 public class AxisStep implements Expression {
-    private static final String AXIS_STEP_PATTERN = "(" + FORWARD_STEP_PATTERN + "|" + REVERSE_STEP_PATTERN + ")";
+    protected static final String AXIS_STEP_PATTERN = "(" + FORWARD_STEP_PATTERN + "|" + REVERSE_STEP_PATTERN + ")";
     
     public AxisStep() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_AXISSTEP);
