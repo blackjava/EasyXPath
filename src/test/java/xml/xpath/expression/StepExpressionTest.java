@@ -13,6 +13,11 @@ public class StepExpressionTest {
     public void axis_step_is_recognized() {
         assertTrue(StepExpression.isStepExpression(("child::node")));
     }
+
+    @Test
+    public void abbreviated_axis_step_is_recognized() {
+        assertTrue(StepExpression.isStepExpression(("@node")));
+    }
     
     @Test
     public void path_with_separators_is_not_recognized() {
