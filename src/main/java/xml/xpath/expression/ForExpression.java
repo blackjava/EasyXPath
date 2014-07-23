@@ -9,7 +9,7 @@ import xml.xpath.Expression;
  * each of them.
  */
 public class ForExpression implements Expression {
-    private static final String FOR_EXPRESSION_PATTERN = "for \\$.+ in .+ return .+";
+    protected static final String FOR_EXPRESSION_PATTERN = "for \\$.+ in .+ return .+";
     
     public ForExpression() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_FOR);

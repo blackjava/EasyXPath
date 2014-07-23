@@ -8,7 +8,7 @@ import xml.xpath.Expression;
  * A let expression declares a variable and binds it to a value.
  */
 public class LetExpression implements Expression {
-    private static final String LET_EXPRESSION_PATTERN = "let \\$.+ := .+ return .+";
+    protected static final String LET_EXPRESSION_PATTERN = "let \\$.+ := .+ return .+";
     
     public LetExpression() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_LET);

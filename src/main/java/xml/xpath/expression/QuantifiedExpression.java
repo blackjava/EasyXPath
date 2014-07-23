@@ -12,7 +12,7 @@ import xml.xpath.Expression;
  * if all items satisfy the condition
  */
 public class QuantifiedExpression implements Expression {
-    private static final String QUANTIFIED_EXPRESSION_PATTERN = "(some|every) \\$.+ in .+ satisfies .+";
+    protected static final String QUANTIFIED_EXPRESSION_PATTERN = "(some|every) \\$.+ in .+ satisfies .+";
     
     public QuantifiedExpression() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_QUANTIFIED);

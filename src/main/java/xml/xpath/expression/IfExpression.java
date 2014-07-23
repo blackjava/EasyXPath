@@ -11,7 +11,7 @@ import xml.xpath.Expression;
  * expression following the else keyword is invoked.
  */
 public class IfExpression implements Expression {
-    private static final String IF_EXPRESSION_PATTERN = "if (.+) then .+ else .+";
+    protected static final String IF_EXPRESSION_PATTERN = "if (.+) then .+ else .+";
     
     public IfExpression() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_IF);
