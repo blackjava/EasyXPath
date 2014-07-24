@@ -1,5 +1,7 @@
 package xml.xpath.expression;
 
+import static xml.xpath.expression.AndExpression.AND_EXPRESSION_PATTERN;
+
 import xml.xpath.UnsupportedExpressionException;
 import i18n.ErrorCode;
 import xml.xpath.Expression;
@@ -9,7 +11,7 @@ import xml.xpath.Expression;
  * its operands is true. Otherwise the or expression evaluates to false.
  */
 public class OrExpression implements Expression {
-    protected static final String OR_EXPRESSION_PATTERN = ".+ or .+";
+    protected static final String OR_EXPRESSION_PATTERN = AND_EXPRESSION_PATTERN + "( or " + AND_EXPRESSION_PATTERN + ")*";
     
     public OrExpression() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_OR);
