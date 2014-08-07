@@ -10,7 +10,7 @@ import xml.xpath.UnsupportedExpressionException;
  * to indicate whether a value is negative or positive.
  */
 public class UnaryExpression {
-    private static final String UNARYEXPRESSION_PATTERN = "(\\-|\\+)*" + SIMPLE_MAP_EXPRESSION_PATTERN;
+    protected static final String UNARYEXPRESSION_PATTERN = "(\\-|\\+)*" + SIMPLE_MAP_EXPRESSION_PATTERN;
     
     public UnaryExpression() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_UNARYEXPRESSION);

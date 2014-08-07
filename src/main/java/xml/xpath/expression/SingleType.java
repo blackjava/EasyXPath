@@ -7,7 +7,7 @@ import xml.xpath.Expression;
 import xml.xpath.UnsupportedExpressionException;
 
 public class SingleType implements Expression {
-    private static final String SINGLETYPE_PATTERN = EQNAME_PATTERN + "(\\?)?";
+    protected static final String SINGLETYPE_PATTERN = EQNAME_PATTERN + "(\\?)?";
     
     public SingleType() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_SINGLETYPE);
