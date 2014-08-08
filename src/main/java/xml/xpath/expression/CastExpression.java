@@ -114,7 +114,7 @@ import xml.xpath.UnsupportedExpressionException;
  * expression "2003-02-31" cast as xs:date would raise a dynamic error.
  */
 public class CastExpression implements Expression {
-    private static final String CASTEXPRESSION_PATTERN = UNARYEXPRESSION_PATTERN + "( cast as " + SINGLETYPE_PATTERN + ")?";
+    protected static final String CASTEXPRESSION_PATTERN = UNARYEXPRESSION_PATTERN + "( cast as " + SINGLETYPE_PATTERN + ")?";
     
     public CastExpression() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_CASTEXPRESSION);
