@@ -76,7 +76,7 @@ import xml.xpath.UnsupportedExpressionException;
 */
 public class ItemType implements Expression {
     private static final String ITEMTYPE_PATTERN = "(" + KINDTEST_PATTERN + "|item\\(\\)|" + FUNCTIONTEST_PATTERN + "|" + EQNAME_PATTERN + ")";
-    private static final String PARENTHESIZEDITEMTYPE_PATTERN = "(" + ITEMTYPE_PATTERN + "|\\(" + ITEMTYPE_PATTERN + "\\))";
+    protected static final String PARENTHESIZEDITEMTYPE_PATTERN = "(" + ITEMTYPE_PATTERN + "|\\(" + ITEMTYPE_PATTERN + "\\))";
     
     public ItemType() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_ITEMTYPE);
