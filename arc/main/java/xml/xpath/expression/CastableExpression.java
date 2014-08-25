@@ -8,7 +8,7 @@ import xml.xpath.Expression;
 import xml.xpath.UnsupportedExpressionException;
 
 public class CastableExpression implements Expression {
-    private static final String CASTABLEEXPRESSION_PATTERN = CASTEXPRESSION_PATTERN + "( castable as " + SINGLETYPE_PATTERN + ")?";
+    protected static final String CASTABLEEXPRESSION_PATTERN = CASTEXPRESSION_PATTERN + "( castable as " + SINGLETYPE_PATTERN + ")?";
     
     public CastableExpression() {
         throw new UnsupportedExpressionException(ErrorCode.UNSUPPORTED_EXPRESSION_CASTABLEEXPRESSION);
