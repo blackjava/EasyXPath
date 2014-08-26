@@ -43,4 +43,12 @@ public class ContextSensitiveTokenizerTest {
         assertEquals("second token", tokenizer.nextToken());
         assertNull(tokenizer.nextToken());
     }
+
+    @Test
+    public void empty_token_is_ignored() {
+        ContextSensitiveTokenizer tokenizer = new ContextSensitiveTokenizer("first token, ,second token", ',');
+        assertEquals("first token", tokenizer.nextToken());
+        assertEquals("second token", tokenizer.nextToken());
+        assertNull(tokenizer.nextToken());
+    }
 }

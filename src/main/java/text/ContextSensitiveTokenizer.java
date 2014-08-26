@@ -2,6 +2,7 @@ package text;
 
 /**
  * Divides a text into fragments based on a delimiter character.
+ * When retrieving the next fragment, empty tokens are skipped.
  */
 public class ContextSensitiveTokenizer {
     StringIterator iterator;
@@ -13,13 +14,21 @@ public class ContextSensitiveTokenizer {
     }
 
     public String nextToken() {
-        String token = getNextToken();
+        String token = null;
 
-        if (token.isEmpty()) {
+        while ((isEmpty(token)) && iterator.hasNext()) {
+            token = getNextToken();
+        }
+        
+        if (isEmpty(token)) {
             token = null;
         }
         
         return token;
+    }
+
+    private static boolean isEmpty(String token) {
+        return (token == null) || token.isEmpty();
     }
 
     private String getNextToken() {
