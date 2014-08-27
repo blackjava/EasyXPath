@@ -140,33 +140,63 @@ public class StringIteratorTest {
     }
 
     @Test
-    public void regular_text_is_not_inside_brackets() {
+    public void regular_text_is_not_inside_square_brackets() {
         StringIterator iterator = new StringIterator("token");
         
-        assertFalse(iterator.insideBrackets());
+        assertFalse(iterator.insideSquareBrackets());
         assertEquals(Character.valueOf('t'), iterator.next());
-        assertFalse(iterator.insideBrackets());
+        assertFalse(iterator.insideSquareBrackets());
     }
 
     @Test
     public void text_in_square_brackets_is_recognized_correctly() {
         StringIterator iterator = new StringIterator("[[token]]");
         
-        assertFalse(iterator.insideBrackets());
+        assertFalse(iterator.insideSquareBrackets());
         assertEquals(Character.valueOf('['), iterator.next());
-        assertTrue(iterator.insideBrackets());
+        assertTrue(iterator.insideSquareBrackets());
         assertEquals(Character.valueOf('['), iterator.next());
-        assertTrue(iterator.insideBrackets());
+        assertTrue(iterator.insideSquareBrackets());
         assertEquals(Character.valueOf('t'), iterator.next());
         assertEquals(Character.valueOf('o'), iterator.next());
         assertEquals(Character.valueOf('k'), iterator.next());
         assertEquals(Character.valueOf('e'), iterator.next());
         assertEquals(Character.valueOf('n'), iterator.next());
-        assertTrue(iterator.insideBrackets());
+        assertTrue(iterator.insideSquareBrackets());
         assertEquals(Character.valueOf(']'), iterator.next());
-        assertTrue(iterator.insideBrackets());
+        assertTrue(iterator.insideSquareBrackets());
         assertEquals(Character.valueOf(']'), iterator.next());
-        assertFalse(iterator.insideBrackets());
+        assertFalse(iterator.insideSquareBrackets());
+    }
+
+    @Test
+    public void regular_text_is_not_inside_curly_brackets() {
+        StringIterator iterator = new StringIterator("token");
+        
+        assertFalse(iterator.insideCurlyBrackets());
+        assertEquals(Character.valueOf('t'), iterator.next());
+        assertFalse(iterator.insideCurlyBrackets());
+    }
+    
+    @Test
+    public void text_in_curly_brackets_is_recognized_correctly() {
+        StringIterator iterator = new StringIterator("{{token}}");
+        
+        assertFalse(iterator.insideCurlyBrackets());
+        assertEquals(Character.valueOf('{'), iterator.next());
+        assertTrue(iterator.insideCurlyBrackets());
+        assertEquals(Character.valueOf('{'), iterator.next());
+        assertTrue(iterator.insideCurlyBrackets());
+        assertEquals(Character.valueOf('t'), iterator.next());
+        assertEquals(Character.valueOf('o'), iterator.next());
+        assertEquals(Character.valueOf('k'), iterator.next());
+        assertEquals(Character.valueOf('e'), iterator.next());
+        assertEquals(Character.valueOf('n'), iterator.next());
+        assertTrue(iterator.insideCurlyBrackets());
+        assertEquals(Character.valueOf('}'), iterator.next());
+        assertTrue(iterator.insideCurlyBrackets());
+        assertEquals(Character.valueOf('}'), iterator.next());
+        assertFalse(iterator.insideCurlyBrackets());
     }
     
     @Test
