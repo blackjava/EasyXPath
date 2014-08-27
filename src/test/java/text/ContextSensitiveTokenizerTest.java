@@ -57,7 +57,6 @@ public class ContextSensitiveTokenizerTest {
         ContextSensitiveTokenizer tokenizer = new ContextSensitiveTokenizer("'quoted,token'", ',');
         assertEquals("'quoted,token'", tokenizer.nextToken());
         assertNull(tokenizer.nextToken());
-        
     }
     
     @Test
@@ -65,6 +64,35 @@ public class ContextSensitiveTokenizerTest {
         ContextSensitiveTokenizer tokenizer = new ContextSensitiveTokenizer("\"quoted,token\"", ',');
         assertEquals("\"quoted,token\"", tokenizer.nextToken());
         assertNull(tokenizer.nextToken());
-        
+    }
+
+    @Test
+    public void escaped_single_quotes_do_not_affect_the_fragmentation() {
+        ContextSensitiveTokenizer tokenizer = new ContextSensitiveTokenizer("''quoted,token''", ',');
+        assertEquals("''quoted", tokenizer.nextToken());
+        assertEquals("token''", tokenizer.nextToken());
+        assertNull(tokenizer.nextToken());
+    }
+
+    @Test
+    public void escaped_double_quotes_do_not_affect_the_fragmentation() {
+        ContextSensitiveTokenizer tokenizer = new ContextSensitiveTokenizer("\"\"quoted,token\"\"", ',');
+        assertEquals("\"\"quoted", tokenizer.nextToken());
+        assertEquals("token\"\"", tokenizer.nextToken());
+        assertNull(tokenizer.nextToken());
+    }
+    
+    @Test
+    public void text_inside_parentheses_is_not_split() {
+        ContextSensitiveTokenizer tokenizer = new ContextSensitiveTokenizer("(parenthesized,token)", ',');
+        assertEquals("(parenthesized,token)", tokenizer.nextToken());
+        assertNull(tokenizer.nextToken());
+    }
+
+    @Test
+    public void text_inside_nested_parenthesis_is_not_split() {
+        ContextSensitiveTokenizer tokenizer = new ContextSensitiveTokenizer("((parenthesized),(token))", ',');
+        assertEquals("((parenthesized),(token))", tokenizer.nextToken());
+        assertNull(tokenizer.nextToken());
     }
 }
