@@ -35,10 +35,15 @@ public class ContextSensitiveTokenizer {
         StringBuilder builder = new StringBuilder();
         
         Character character;
+        boolean inQuotes = false;
         while (iterator.hasNext()) {
             character = iterator.next();
 
-            if (isDelimiter(character)) {
+            if (isQuote(character)) {
+                inQuotes = !inQuotes;
+            }
+            
+            if (isDelimiter(character) && !inQuotes) {
                 break;
             } else {
                 builder.append(character);
@@ -46,6 +51,10 @@ public class ContextSensitiveTokenizer {
         }
         
         return builder.toString().trim();
+    }
+
+    private static boolean isQuote(Character character) {
+        return (character.equals('\'') || character.equals('"'));
     }
 
     private boolean isDelimiter(Character character) {

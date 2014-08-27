@@ -51,4 +51,20 @@ public class ContextSensitiveTokenizerTest {
         assertEquals("second token", tokenizer.nextToken());
         assertNull(tokenizer.nextToken());
     }
+
+    @Test
+    public void single_quoted_text_is_not_split() {
+        ContextSensitiveTokenizer tokenizer = new ContextSensitiveTokenizer("'quoted,token'", ',');
+        assertEquals("'quoted,token'", tokenizer.nextToken());
+        assertNull(tokenizer.nextToken());
+        
+    }
+    
+    @Test
+    public void double_quoted_text_is_not_split() {
+        ContextSensitiveTokenizer tokenizer = new ContextSensitiveTokenizer("\"quoted,token\"", ',');
+        assertEquals("\"quoted,token\"", tokenizer.nextToken());
+        assertNull(tokenizer.nextToken());
+        
+    }
 }
