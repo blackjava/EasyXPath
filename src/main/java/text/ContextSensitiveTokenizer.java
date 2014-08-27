@@ -35,22 +35,15 @@ public class ContextSensitiveTokenizer {
         StringBuilder builder = new StringBuilder();
         
         Character character;
-        int  parenthesesLevels = 0;
         while (iterator.hasNext()) {
             character = iterator.next();
 
-            if (character.equals('(')) {
-                parenthesesLevels += 1;
-            }
-            
-            if (isDelimiter(character) && !iterator.insideQuotes() && !(parenthesesLevels > 0)) {
+            if (isDelimiter(character) 
+                    && !iterator.insideQuotes() 
+                    && !iterator.insideParentheses()) {
                 break;
             } else {
                 builder.append(character);
-            }
-            
-            if (character.equals(')')) {
-                parenthesesLevels -= 1;
             }
         }
         

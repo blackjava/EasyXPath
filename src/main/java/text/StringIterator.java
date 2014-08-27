@@ -23,6 +23,7 @@ public class StringIterator implements Iterator<Character> {
     }
 
     private boolean insideQuotes = false;
+    private int parenthesesLevel = 0;
     
     @Override
     public Character next() {
@@ -33,6 +34,14 @@ public class StringIterator implements Iterator<Character> {
             
             if (isQuote(character)) {
                 insideQuotes = !insideQuotes;
+            }
+            
+            if (character.equals('(')) {
+                parenthesesLevel += 1;
+            }
+
+            if (character.equals(')')) {
+                parenthesesLevel -= 1;
             }
         }
 
@@ -50,5 +59,9 @@ public class StringIterator implements Iterator<Character> {
     
     public boolean insideQuotes() {
         return insideQuotes;
+    }
+    
+    public boolean insideParentheses() {
+        return (parenthesesLevel > 0);
     }
 }
