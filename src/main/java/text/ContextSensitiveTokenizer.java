@@ -15,8 +15,7 @@ public class ContextSensitiveTokenizer {
 
     public String nextToken() {
         String token = null;
-
-        while ((isEmpty(token)) && iterator.hasNext()) {
+        while ((isEmpty(token)) && moreTokensAvailable()) {
             token = getNextToken();
         }
         
@@ -29,6 +28,10 @@ public class ContextSensitiveTokenizer {
 
     private static boolean isEmpty(String token) {
         return (token == null) || token.isEmpty();
+    }
+
+    private boolean moreTokensAvailable() {
+        return iterator.hasNext();
     }
 
     private String getNextToken() {

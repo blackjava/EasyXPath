@@ -119,7 +119,7 @@ public class StringIteratorTest {
     }
 
     @Test
-    public void text_with_nested_parentheses_is_correctly_recognized_as_inside_parentheses() {
+    public void text_in_parentheses_is_recognized_correctly() {
         StringIterator iterator = new StringIterator("((token))");
         
         assertFalse(iterator.insideParentheses());
@@ -137,6 +137,36 @@ public class StringIteratorTest {
         assertTrue(iterator.insideParentheses());
         assertEquals(Character.valueOf(')'), iterator.next());
         assertFalse(iterator.insideParentheses());
+    }
+
+    @Test
+    public void regular_text_is_not_inside_brackets() {
+        StringIterator iterator = new StringIterator("token");
+        
+        assertFalse(iterator.insideBrackets());
+        assertEquals(Character.valueOf('t'), iterator.next());
+        assertFalse(iterator.insideBrackets());
+    }
+
+    @Test
+    public void text_in_square_brackets_is_recognized_correctly() {
+        StringIterator iterator = new StringIterator("[[token]]");
+        
+        assertFalse(iterator.insideBrackets());
+        assertEquals(Character.valueOf('['), iterator.next());
+        assertTrue(iterator.insideBrackets());
+        assertEquals(Character.valueOf('['), iterator.next());
+        assertTrue(iterator.insideBrackets());
+        assertEquals(Character.valueOf('t'), iterator.next());
+        assertEquals(Character.valueOf('o'), iterator.next());
+        assertEquals(Character.valueOf('k'), iterator.next());
+        assertEquals(Character.valueOf('e'), iterator.next());
+        assertEquals(Character.valueOf('n'), iterator.next());
+        assertTrue(iterator.insideBrackets());
+        assertEquals(Character.valueOf(']'), iterator.next());
+        assertTrue(iterator.insideBrackets());
+        assertEquals(Character.valueOf(']'), iterator.next());
+        assertFalse(iterator.insideBrackets());
     }
     
     @Test
