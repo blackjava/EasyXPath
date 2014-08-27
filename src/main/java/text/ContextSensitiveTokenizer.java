@@ -35,18 +35,15 @@ public class ContextSensitiveTokenizer {
         StringBuilder builder = new StringBuilder();
         
         Character character;
-        boolean inQuotes = false;
         int  parenthesesLevels = 0;
         while (iterator.hasNext()) {
             character = iterator.next();
 
-            if (isQuote(character)) {
-                inQuotes = !inQuotes;
-            } else if (character.equals('(')) {
+            if (character.equals('(')) {
                 parenthesesLevels += 1;
             }
             
-            if (isDelimiter(character) && !inQuotes && !(parenthesesLevels > 0)) {
+            if (isDelimiter(character) && !iterator.insideQuotes() && !(parenthesesLevels > 0)) {
                 break;
             } else {
                 builder.append(character);
@@ -58,10 +55,6 @@ public class ContextSensitiveTokenizer {
         }
         
         return builder.toString().trim();
-    }
-
-    private static boolean isQuote(Character character) {
-        return (character.equals('\'') || character.equals('"'));
     }
 
     private boolean isDelimiter(Character character) {
