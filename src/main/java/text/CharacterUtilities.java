@@ -33,4 +33,8 @@ public final class CharacterUtilities {
     static boolean isQuote(Character character) {
         return character.equals('\'') || character.equals('"');
     }
+    
+    static boolean isSymbol(Character character) {
+        return (!Character.isLetterOrDigit(character) && !Character.isWhitespace(character));
+    }
 }

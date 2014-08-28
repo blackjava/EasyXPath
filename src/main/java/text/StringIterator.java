@@ -1,5 +1,7 @@
 package text;
 
+import static text.CharacterUtilities.*;
+
 import java.util.Iterator;
 
 /**
@@ -34,26 +36,31 @@ public class StringIterator implements Iterator<Character> {
         if (hasNext()) {
             character = string.charAt(index++);
 
-            if (CharacterUtilities.isQuote(character)) {
-                insideQuotes = !insideQuotes;
-            } else if (CharacterUtilities.isOpeningParenthesis(character)) {
-                parenthesesLevel += 1;
-            } else if (CharacterUtilities.isClosingParenthesis(character)) {
-                parenthesesLevel -= 1;
-            } else if (CharacterUtilities.isOpeningSquareBracket(character)) {
-                squareBracketLevel += 1;
-            } else if (CharacterUtilities.isClosingSquareBracket(character)) {
-                squareBracketLevel -= 1;
-            } else if (CharacterUtilities.isOpeningCurlyBracket(character)) {
-                curlyBracketLevel += 1;
-            } else if (CharacterUtilities.isClosingCurlyBracket(character)) {
-                curlyBracketLevel -= 1;
-            }            
+            if (isSymbol(character)) {
+                updateIteratorState(character);            
+            }
         }
 
         return character;
     }
 
+    private void updateIteratorState(Character character) {
+        if (isQuote(character)) {
+            insideQuotes = !insideQuotes;
+        } else if (isOpeningParenthesis(character)) {
+            parenthesesLevel += 1;
+        } else if (isClosingParenthesis(character)) {
+            parenthesesLevel -= 1;
+        } else if (isOpeningSquareBracket(character)) {
+            squareBracketLevel += 1;
+        } else if (isClosingSquareBracket(character)) {
+            squareBracketLevel -= 1;
+        } else if (isOpeningCurlyBracket(character)) {
+            curlyBracketLevel += 1;
+        } else if (isClosingCurlyBracket(character)) {
+            curlyBracketLevel -= 1;
+        }
+    }
     
     @Override
     public void remove() {
