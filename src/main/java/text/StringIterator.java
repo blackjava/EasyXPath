@@ -33,32 +33,20 @@ public class StringIterator implements Iterator<Character> {
 
         if (hasNext()) {
             character = string.charAt(index++);
-            
-            if (isQuote(character)) {
+
+            if (CharacterUtilities.isQuote(character)) {
                 insideQuotes = !insideQuotes;
-            }
-            
-            if (character.equals('(')) {
+            } else if (CharacterUtilities.isOpeningParenthesis(character)) {
                 parenthesesLevel += 1;
-            }
-
-            if (character.equals(')')) {
+            } else if (CharacterUtilities.isClosingParenthesis(character)) {
                 parenthesesLevel -= 1;
-            }
-
-            if (character.equals('[')) {
+            } else if (CharacterUtilities.isOpeningSquareBracket(character)) {
                 squareBracketLevel += 1;
-            }
-
-            if (character.equals(']')) {
+            } else if (CharacterUtilities.isClosingSquareBracket(character)) {
                 squareBracketLevel -= 1;
-            }            
-
-            if (character.equals('{')) {
+            } else if (CharacterUtilities.isOpeningCurlyBracket(character)) {
                 curlyBracketLevel += 1;
-            }
-
-            if (character.equals('}')) {
+            } else if (CharacterUtilities.isClosingCurlyBracket(character)) {
                 curlyBracketLevel -= 1;
             }            
         }
@@ -66,9 +54,6 @@ public class StringIterator implements Iterator<Character> {
         return character;
     }
 
-    private static boolean isQuote(Character character) {
-        return (character.equals('\'') || character.equals('"'));
-    }
     
     @Override
     public void remove() {
