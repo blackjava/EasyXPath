@@ -79,7 +79,7 @@ public class CharacterUtilitiesTest {
     public void symbol_is_not_recognized_as_closing_curly_bracket() {
         assertFalse(CharacterUtilities.isClosingCurlyBracket('.'));
     }
-    
+
     @Test
     public void letter_is_not_recognized_as_symbol() {
         assertFalse(CharacterUtilities.isSymbol('a'));
