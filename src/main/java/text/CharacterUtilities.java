@@ -6,35 +6,35 @@ package text;
 public final class CharacterUtilities {
     private CharacterUtilities() {}
 
-    static boolean isOpeningCurlyBracket(Character character) {
+    public static boolean isOpeningCurlyBracket(Character character) {
         return character.equals('{');
     }
 
-    static boolean isOpeningParenthesis(Character character) {
+    public static boolean isOpeningParenthesis(Character character) {
         return character.equals('(');
     }
 
-    static boolean isClosingCurlyBracket(Character character) {
+    public static boolean isClosingCurlyBracket(Character character) {
         return character.equals('}');
     }
 
-    static boolean isClosingParenthesis(Character character) {
+    public static boolean isClosingParenthesis(Character character) {
         return character.equals(')');
     }
 
-    static boolean isOpeningSquareBracket(Character character) {
+    public static boolean isOpeningSquareBracket(Character character) {
         return character.equals('[');
     }
 
-    static boolean isClosingSquareBracket(Character character) {
+    public static boolean isClosingSquareBracket(Character character) {
         return character.equals(']');
     }
 
-    static boolean isQuote(Character character) {
+    public static boolean isQuote(Character character) {
         return character.equals('\'') || character.equals('"');
     }
     
-    static boolean isSymbol(Character character) {
+    public static boolean isSymbol(Character character) {
         return (!Character.isLetterOrDigit(character) && !Character.isWhitespace(character));
     }
 }

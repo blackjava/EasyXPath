@@ -33,4 +33,12 @@ public class XPathTest {
         assertNotNull(exception);
         assertEquals(ErrorCode.EMPTY_EXPRESSION, exception.getErrorCode());
     }
+    
+    @Test
+    public void parsing_a_valid_expression_generates_xpath() throws Exception {
+        XPath xpath = XPath.parse(".");
+        
+        assertNotNull(xpath);
+        assertEquals(1, xpath.length());
+    }
 }
