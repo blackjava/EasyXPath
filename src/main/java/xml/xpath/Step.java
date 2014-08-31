@@ -6,8 +6,8 @@ package xml.xpath;
  * consists of those items that satisfy the predicates, working from left to 
  * right.
  */
-public final class Step {
+public abstract class Step {
     public static Step parse(String expression) {
-        return new Step();
+        return AxisStep.parse(expression);
     }
 }
