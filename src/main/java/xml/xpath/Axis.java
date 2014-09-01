@@ -1,8 +1,10 @@
 package xml.xpath;
 
+import org.w3c.dom.Node;
+
 /**
  *
  */
-public enum Axis {
-    SELF
+public interface Axis {
+    Node next();
 }

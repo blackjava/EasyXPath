@@ -1,5 +1,7 @@
 package xml.xpath;
 
+import xml.xpath.axis.Self;
+
 /**
  * An axis step returns a sequence of nodes that are reachable from the context 
  * node via a specified axis. Such a step has two parts: an axis, which defines 
@@ -30,10 +32,12 @@ public class AxisStep extends Step {
     }
     
     public static AxisStep parse(String expression) {
+        Axis axis = null;
+        
         if (expression.equals(".")) {
-            expression = "self";
+            axis = new Self();
         }
 
-        return new AxisStep(Axis.valueOf(expression.toUpperCase()));
+        return new AxisStep(axis);
     }
 }

@@ -3,6 +3,7 @@ package xml;
 import i18n.ErrorCode;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import xml.xpath.axis.Self;
 
 public class XPathTest {
     
