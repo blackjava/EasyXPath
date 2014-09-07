@@ -1,8 +1,12 @@
 package xml;
 
 import i18n.ErrorCode;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import xml.xpath.axis.Self;
 
 public class XPathTest {
@@ -41,5 +45,14 @@ public class XPathTest {
         
         assertNotNull(xpath);
         assertEquals(1, xpath.length());
+    }
+
+    @Test
+    public void self_node_returns_proper_node() throws Exception {
+        Element element = XmlUtilities.createElement("element");
+        
+        XPath xpath = XPath.parse("self::node()");
+        xpath.apply(element);
+
     }
 }

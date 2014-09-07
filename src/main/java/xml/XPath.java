@@ -3,6 +3,7 @@ package xml;
 import static i18n.ErrorCode.EMPTY_EXPRESSION;
 import java.util.ArrayList;
 import java.util.List;
+import org.w3c.dom.Node;
 import text.ContextSensitiveTokenizer;
 import static text.StringUtilities.isEmpty;
 import xml.xpath.Step;
@@ -34,6 +35,10 @@ public class XPath {
         return new XPath(steps);
     }
 
+    public void apply(Node element) {
+        
+    }
+    
     public int length() {
         return steps.size();
     }

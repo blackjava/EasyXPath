@@ -1,5 +1,8 @@
 package xml.xpath;
 
+import java.util.ArrayList;
+import java.util.List;
+import org.w3c.dom.Node;
 import xml.xpath.axis.Self;
 
 /**
@@ -26,18 +29,61 @@ import xml.xpath.axis.Self;
  */
 public class AxisStep extends Step {
     private final Axis axis;
+    private final NodeTest nodeTest;
     
-    public AxisStep(Axis axis) {
+    private AxisStep(Axis axis, NodeTest nodeTest) {
         this.axis = axis;
+        this.nodeTest = nodeTest;
+    }
+
+    public List<Node> apply(List<Node> nodes) {
+        List<Node> matchingNodes = new ArrayList<>();
+        
+        for (Node node : nodes) {
+            List<Node> axisNodes = axis.apply(node);
+            
+            for (Node axisNode : axisNodes) {
+                if (nodeTest.test(axisNode)) {
+                    matchingNodes.add(axisNode);
+                }
+            }
+        }
+        
+        return matchingNodes;
+    }
+    
+    public Axis getAxis() {
+        return axis;
+    }
+    
+    public NodeTest getNodeTest() {
+        return nodeTest;
     }
     
     public static AxisStep parse(String expression) {
         Axis axis = null;
+        NodeTest nodeTest = null;
         
         if (expression.equals(".")) {
-            axis = new Self();
+            expression = "self::node()";
+        }
+        
+        int separatorIndex = expression.indexOf("::");
+        if (separatorIndex >= 0) {
+            String axisName = expression.substring(0, separatorIndex);
+            
+            if ("self".equalsIgnoreCase(axisName)) {
+                axis = new Self();
+            }
+            
+            String nodeTestName = expression.substring(separatorIndex + 2);
+            
+            if ("node()".equalsIgnoreCase(nodeTestName)) {
+                nodeTest = new AnyKindTest();
+            }
         }
 
-        return new AxisStep(axis);
+        return new AxisStep(axis, nodeTest);
     }
+    
 }
