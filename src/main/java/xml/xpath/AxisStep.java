@@ -3,6 +3,7 @@ package xml.xpath;
 import java.util.ArrayList;
 import java.util.List;
 import org.w3c.dom.Node;
+import xml.xpath.axis.Child;
 import xml.xpath.axis.Self;
 
 /**
@@ -74,6 +75,8 @@ public class AxisStep extends Step {
             
             if ("self".equalsIgnoreCase(axisName)) {
                 axis = new Self();
+            } else if ("child".equalsIgnoreCase(axisName)) {
+                axis = new Child();
             }
             
             String nodeTestName = expression.substring(separatorIndex + 2);

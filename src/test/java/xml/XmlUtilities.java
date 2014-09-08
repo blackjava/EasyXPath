@@ -1,5 +1,7 @@
 package xml;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -15,11 +17,9 @@ public final class XmlUtilities {
     public static Attr createAttribute(String name) {
         Attr attribute = null;
         
-        try {
-            Document document = createDocument();
+        Document document = createDocument();
+        if (document != null) {
             attribute = document.createAttribute(name);
-        } catch (ParserConfigurationException pce) {
-            // Ignore parser configuration exceptions
         }
         
         return attribute;
@@ -28,20 +28,25 @@ public final class XmlUtilities {
     public static Element createElement(String name) {
         Element element = null;
         
-        try {
-            Document document = createDocument();
+        Document document = createDocument();
+        if (document != null) {
             element = document.createElement(name);
-        } catch (ParserConfigurationException pce) {
-            // Ignore parser configuration exceptions
         }
         
         return element;
     }
 
-    private static Document createDocument() throws ParserConfigurationException {
-        DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder documentBuilder = builderFactory.newDocumentBuilder();
-        Document document = documentBuilder.newDocument();
+    public static Document createDocument() {
+        Document document = null;
+                
+        try {
+            DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder documentBuilder = builderFactory.newDocumentBuilder();
+            document = documentBuilder.newDocument();
+        } catch (ParserConfigurationException ex) {
+            // Ignore parser configuration errors
+        }
+        
         return document;
     }
 }
