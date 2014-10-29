@@ -30,5 +30,21 @@
             <version>4.10</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>blackjava</groupId>
+            <artifactId>Toolbox</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
+    
+    <repositories>
+        <repository>
+            <id>toolbox-staging</id>
+            <url>https://raw.github.com/blackjava/toolbox/mvn-repo</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>
