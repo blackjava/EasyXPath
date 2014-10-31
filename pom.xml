@@ -31,6 +31,12 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.1.1.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>blackjava</groupId>
             <artifactId>Toolbox</artifactId>
             <version>1.0-SNAPSHOT</version>
