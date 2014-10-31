@@ -9,7 +9,7 @@ import xml.xpath.Axis;
 /**
  *
  */
-public class Child implements Axis {
+public class Child extends Axis {
 
     @Override
     public List<Node> apply(Node node) {

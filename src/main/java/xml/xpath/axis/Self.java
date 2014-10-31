@@ -8,8 +8,7 @@ import xml.xpath.Axis;
 /**
  *
  */
-public class Self implements Axis {
-
+public class Self extends Axis {
     @Override
     public List<Node> apply(Node node) {
         return Arrays.asList(node);
